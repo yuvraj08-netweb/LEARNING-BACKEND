@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Posts</title>
 </head>
+
 <body>
-    <h1>Welcome to the homepage</h1>
-    <p>This is the homepage of my website</p>
+    <h1>Posts</h1>
+
+    <form id="addPostForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <button type="submit">Add Post</button>
+    </form>
+    <hr>
+    <button id="getPostsBtn">Get Posts</button>
+    <div id="output"></div>
+
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
