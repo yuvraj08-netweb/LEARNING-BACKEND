@@ -1,8 +1,11 @@
 const errorHandler = (err, req, res, next) => {
-    res.status(404).json({msj: 'Error'});
+  if (err.status) {
+    res.status(err.status).json({ msj: err.message });
+  } else {
+    res.status(500).json({ msj: err.message });
+  }
 };
 export default errorHandler;
-
 
 // const errorHandler = (err, req, res, next) => {
 //     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
@@ -12,4 +15,3 @@ export default errorHandler;
 //     });
 //   };
 //   export default errorHandler;
-  
